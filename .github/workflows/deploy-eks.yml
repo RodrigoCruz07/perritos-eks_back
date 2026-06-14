@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 env:
-  ECR_REPO_BACKEND: tienda-backend
+  ECR_REPO_BACKEND: backend
 
 jobs:
   build-and-deploy:
