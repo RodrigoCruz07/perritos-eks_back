@@ -59,7 +59,7 @@ jobs:
           kubectl apply -f k8s-backend/namespace.yaml
           kubectl apply -f k8s-backend/backend-deployment.yaml -n $EKS_NAMESPACE
           kubectl apply -f k8s-backend/backend-service.yaml -n $EKS_NAMESPACE
-          if [ -f k8s/backend-hpa.yaml ]; then kubectl apply -f k8s/backend-hpa.yaml -n $EKS_NAMESPACE; fi
+          kubectl apply -f k8s-backend/backend-hpa.yaml -n $EKS_NAMESPACE
           
           kubectl set image deployment/tienda-backend \
             backend=$ECR_REGISTRY/${ECR_REPO_BACKEND}:${IMAGE_TAG} \
